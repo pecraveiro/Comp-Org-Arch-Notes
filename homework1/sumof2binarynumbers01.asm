@@ -1,4 +1,4 @@
-; Programa realiza a soma de dois números e armazena em um determinado local na memória. Porém, tudo isso é feito pelo usuário manualmente
+; O Programa realiza a soma de dois números e armazena em um determinado local na memória. Porém, tudo isso é feito pelo usuário manualmente
 
 .org 2000H ; Inicia em 2000
 
@@ -10,4 +10,4 @@ HLT ; Stop the programm execution - Para o programa
 
 ; Nesse caso:
 ; 02H + 03H = 05H
-; E esse valor é armazenado em 2052
+; E esse valor é armazenado em 2052 (endereço de memória)
