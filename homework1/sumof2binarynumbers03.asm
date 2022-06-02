@@ -16,7 +16,7 @@ MVI B, 00H
 ADD M
 JNC loop ; JNC - Jump if carry is not generate / Jump if no carry
 INR B ; (B <- B+1 <- 01H)
-loop: STA 2053H
+loop: STA 2052H
 MOV A,B
-STA 2052H
+STA 2053H
 HLT
