@@ -22,3 +22,10 @@ MOV A, D ; (A <- 05H ~RESULTADO)
 STA C052H
 
 HLT ; Finaliza o programa
+
+
+; ex:
+; c050h <- 0Ah (10 EM DECIMAL) DIVIDENDO
+; c051h <- 02h (2 EM DECIMAL) DIVISOR
+; c052 <- 05h (5 EM DECIMAL) QUOCIENTE/RESULTADO
+; c053h <- 00h - RESTO
