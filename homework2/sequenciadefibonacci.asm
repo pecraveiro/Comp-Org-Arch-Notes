@@ -2,7 +2,7 @@
 
 .org 2000h
 
-LXI H, C050H ; Onde os números começaram a ser armazenados
+LXI H, C050H ; Onde os números começaram a ser armazenados OBS: ARRUMAR ISSO depois
 LDA D000H 
 MOV D, A 
 MVI B, 00H
