@@ -7,7 +7,7 @@
 
 .org 2000h ; Inicia o programa
 
-LXI H, CO50H ; input (first data/dividendo)
+LXI H, 3O50H ; input (first data/dividendo)
 MOV B, M ; ( B <- 0AH)
 INX H ;
 MOV C, M ; (C <- 02H)
@@ -17,15 +17,15 @@ loop: SUB C ; (C <- 08H)... (C <- 06H)... (C <- 04H)... (C <- 02H)... (C <- 00H)
 INR D
 CMP C
 JNC loop
-STA C053H
+STA 3053H
 MOV A, D ; (A <- 05H ~RESULTADO)
-STA C052H
+STA 3052H
 
 HLT ; Finaliza o programa
 
 
 ; ex:
-; c050h <- 0Ah (10 EM DECIMAL) DIVIDENDO
-; c051h <- 02h (2 EM DECIMAL) DIVISOR
-; c052 <- 05h (5 EM DECIMAL) QUOCIENTE/RESULTADO
-; c053h <- 00h - RESTO
+; 3050h <- 0Ah (10 EM DECIMAL) DIVIDENDO
+; 3051h <- 02h (2 EM DECIMAL) DIVISOR
+; 3052 <- 05h (5 EM DECIMAL) QUOCIENTE/RESULTADO
+; 3053h <- 00h - RESTO
