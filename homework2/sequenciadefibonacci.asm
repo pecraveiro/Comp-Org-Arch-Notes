@@ -2,7 +2,7 @@
 
 .org 2000h
 
-LXI H, C050H ; Onde os números começaram a ser armazenados OBS: ARRUMAR ISSO depois
+LXI H, 2000H ; Onde os números começaram a ser armazenados OBS: ARRUMAR ISSO depois
 LDA D000H 
 MOV D, A 
 MVI B, 00H
@@ -13,7 +13,7 @@ ADD C ; (A <- A+C)
 MOV B, C
 MOV C, A
 MOV B, A
-INX H ; C051H... C052H
+INX H ; 2001H... 2002H ... 2003H... 2004H
 DCR D 
 JNZ loop
-HLT
+HLT ; Finaliza o programa
