@@ -1,4 +1,4 @@
-START:      LXI H,0000H  ; Load 0000H value in HL register pair
+START:      LXI H,0000H  ; Load 0000H value in HL register pair / carrega o valor 0000h no par de registradores HL
 
 Hour_Min:   SHLD 5001H   ; Store HL pair value at 5001H(L)and 5002H(H)
             XRA A  	     ; XOR between A and A => Clear register A
@@ -51,4 +51,4 @@ Inner_loop: DCX B            ; 6T     Decrease value of BC pair (Inner loop)
 
 ; Calculation: (7+2*(10+65535*(6+4+4+10)-3+4+10)-3+10)T = 3145736T
 ; 1 T = 1/3*10^6 sec
-; Portanto, 3145736T = 1.04857 seconds,which is approximately 1 Sec
+; Portanto, 3145736T = 1.04857 seconds, which is approximately 1 sec
