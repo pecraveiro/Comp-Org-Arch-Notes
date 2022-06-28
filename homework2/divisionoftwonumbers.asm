@@ -4,7 +4,6 @@
 ; 10 ÷ 2 = 5
 ; 10 (DIVIDENDO) ÷ 2 (DIVISOR) = 5 (quociente/resultado)
 
-
 .org 2000h ; Inicia o programa
 
 LXI H, 3O50H ; input (first data/dividendo)
@@ -22,7 +21,6 @@ MOV A, D ; (A <- 05H ~RESULTADO)
 STA 3052H
 
 HLT ; Finaliza o programa
-
 
 ; ex:
 ; 3050h <- 0Ah (10 EM DECIMAL) DIVIDENDO
