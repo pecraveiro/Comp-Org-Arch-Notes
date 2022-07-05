@@ -14,5 +14,5 @@ ADD M
 INX H
 INX H
 DCR C
-JNZ Loop
+JNZ loop
 HLT ; Finaliza o programa
