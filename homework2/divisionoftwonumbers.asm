@@ -6,7 +6,7 @@
 
 .org 2000h ; Inicia o programa
 
-LXI H, 3O50H ; input (first data/dividendo)
+LXI H, 3050H ; input (first data/dividendo)
 MOV B, M ; ( B <- 0AH)
 INX H ;
 MOV C, M ; (C <- 02H)
