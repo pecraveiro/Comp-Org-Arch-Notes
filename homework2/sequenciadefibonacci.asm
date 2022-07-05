@@ -16,3 +16,14 @@ INX H
 DCR C
 JNZ loop
 HLT ; Finaliza o programa
+
+; 2000H - 00h
+; 2001H - 01h
+; 2002H - 01h
+; 2003H - 02h
+; 2004H - 03h
+; 2005H - 05h
+; 2006H - 08h
+; 2007H - 0Dh
+; 2008H - 15h
+; 2009H - 22h
