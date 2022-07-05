@@ -2,18 +2,18 @@
 
 .org 1500h
 
-MVI C, 09H
+MVI C, 09H ; move o dado para o registro
 LXI H, 2000H ; Onde os números começam a ser armazenados
-MVI A, 00H
-MOV M, A
-INR A
-INX H
-loop: MOV M,A
-DCX H
-ADD M
-INX H
-INX H
-DCR C
+MVI A, 00H ; move o dado para o registro
+MOV M, A ; Move conteúdo de registro para memória apontada por HL
+INR A ; Incrementa de um o conteúdo de memória apontado por HL
+INX H ; Incrementa de um o conteúdo do registrador
+loop: MOV M, A 
+DCX H ; Decrementa um o conteúdo de um par de registradores
+ADD M ; Adiciona conteúdo de memória apontado por HL
+INX H ; Incrementa de um o conteúdo
+INX H ; Incrementa de um o conteúdo
+DCR C ; Decrementa de um o conteúdo da memória apontada por HL
 JNZ loop
 HLT ; Finaliza o programa
 
