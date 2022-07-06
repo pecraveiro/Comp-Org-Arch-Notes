@@ -11,8 +11,8 @@ INX H ; Incrementa de um o conteúdo do registrador
 loop: MOV M, A 
 DCX H ; Decrementa um o conteúdo de um par de registradores
 ADD M ; Adiciona conteúdo de memória apontado por HL
-INX H ; Incrementa de um o conteúdo
-INX H ; Incrementa de um o conteúdo
+INX H ; Incrementa de um o conteúdo do par de registradores
+INX H ; Incrementa de um o conteúdo do par de registradores
 DCR C ; Decrementa de um o conteúdo da memória apontada por HL
 JNZ loop
 HLT ; Finaliza o programa
