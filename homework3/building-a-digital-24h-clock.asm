@@ -48,9 +48,9 @@ Outer_loop: LXI B,0FFFFH     ; 10T    Move value FFFFH (65535) to register pair 
 Inner_loop: DCX B            ; 6T     Decrease value of BC pair (Inner loop)
 	    MOV A,B          ; 4T     Delay time: Move value of register B to Accumulator
 	    ORA C            ; 4T     Performs OR operation between Accumulator and regsiter C
-	    JNZ Inner_loop   ; 10/7T  If value of BC pair is still not zero,then go to Inner_loop,otherwise continue
-	    DCR D            ; 4T     If value of BC pair is zero,then decrese value of register D
-	    JNZ Outer_loop   ; 10/7T  If value of register D is not zero,then go to Outer_loop,otherwise continue
+	    JNZ Inner_loop   ; 10/7T  If value of BC pair is still not zero, then go to Inner_loop, otherwise continue
+	    DCR D            ; 4T     If value of BC pair is zero, then decrese value of register D
+	    JNZ Outer_loop   ; 10/7T  If value of register D is not zero, then go to Outer_loop, otherwise continue
 	    RET		     ; 10T    Return from sub-routine => program control is transferred back to main program
 
 ; Calculation: (7+2*(10+65535*(6+4+4+10)-3+4+10)-3+10)T = 3145736T
