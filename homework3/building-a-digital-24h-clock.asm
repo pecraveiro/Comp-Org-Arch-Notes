@@ -1,4 +1,8 @@
-START:      LXI H,0000H  ; Load 0000H value in HL register pair / carrega o valor 0000h no par de registradores HL
+; Pedro M S Craveiro - UFSC - Org e Arq de Comp.
+
+.org 0000H ; Starts the programm - Simmulator 8085
+
+START:      LXI H,0000H  ; Load 0000H value in HL register pair
 
 Hour_Min:   SHLD 5001H   ; Store HL pair value at 5001H(L)and 5002H(H)
             XRA A  	     ; XOR between A and A => Clear register A
@@ -22,15 +26,15 @@ sec_min_hr: STA 5000H        ; Store accumulator content at 5000H
 	    DAA		     ; Ajust decimal => To convert HEX to Decimal format
 	    MOV L,A          ; Move value of accumulator to L
 	    CPI 60H          ; Compare accumulator value with 60H (In decimal here) i.e.60 min
-	    JNZ Hour_Min     ; If false,then go to Hour_Min,otherwise continue below
+	    JNZ Hour_Min     ; If false, then go to Hour_Min, otherwise continue below
 
 	    XRA A            ; Clear value of accumulator
             STA 5001H        ; Store the value of accumulator to 5001H
 	    MOV L,A          ; Move value of A to L => For displaying purpose
  
-	    MOV A,H	         ; Move value of H to accumulator
-	    ADI 01H	         ; Add 01H to accumulator
-	    DAA		           ; Ajust decimal => To convert HEX to Decimal format
+	    MOV A,H	     ; Move value of H to accumulator
+	    ADI 01H	     ; Add 01H to accumulator
+	    DAA		     ; Ajust decimal => To convert HEX to Decimal format
 	    MOV H,A          ; Move value of A to H => For displaying purpose
 	    CPI 24H          ; Compare accumulator value with 24H (In decimal here) i.e.24 hour
 	    JNZ Hour_Min     ; If it is false, then go to Hour_Min otherwise continue below
@@ -47,8 +51,8 @@ Inner_loop: DCX B            ; 6T     Decrease value of BC pair (Inner loop)
 	    JNZ Inner_loop   ; 10/7T  If value of BC pair is still not zero,then go to Inner_loop,otherwise continue
 	    DCR D            ; 4T     If value of BC pair is zero,then decrese value of register D
 	    JNZ Outer_loop   ; 10/7T  If value of register D is not zero,then go to Outer_loop,otherwise continue
-	    RET		           ; 10T    Return from sub-routine => program control is transferred back to main program
+	    RET		     ; 10T    Return from sub-routine => program control is transferred back to main program
 
 ; Calculation: (7+2*(10+65535*(6+4+4+10)-3+4+10)-3+10)T = 3145736T
 ; 1 T = 1/3*10^6 sec
-; Portanto, 3145736T = 1.04857 seconds, which is approximately 1 sec
+; 3145736T = 1.04857 seconds, which is approximately 1 sec
